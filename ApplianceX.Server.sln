@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplianceX.Server.Host", "ApplianceX.Server.Host\ApplianceX.Server.Host.csproj", "{D964FD23-392D-4216-956F-1C86B7B3A4F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplianceX.Server.Database", "ApplianceX.Server.Database\ApplianceX.Server.Database.csproj", "{5853A383-3B78-43DD-AD72-A177FDE3A602}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D964FD23-392D-4216-956F-1C86B7B3A4F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D964FD23-392D-4216-956F-1C86B7B3A4F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D964FD23-392D-4216-956F-1C86B7B3A4F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D964FD23-392D-4216-956F-1C86B7B3A4F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5853A383-3B78-43DD-AD72-A177FDE3A602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5853A383-3B78-43DD-AD72-A177FDE3A602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5853A383-3B78-43DD-AD72-A177FDE3A602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5853A383-3B78-43DD-AD72-A177FDE3A602}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
