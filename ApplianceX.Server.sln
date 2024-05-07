@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplianceX.Server.Host", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplianceX.Server.Database", "ApplianceX.Server.Database\ApplianceX.Server.Database.csproj", "{5853A383-3B78-43DD-AD72-A177FDE3A602}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplianceX.Server.Client", "ApplianceX.Server.Client\ApplianceX.Server.Client.csproj", "{03D6116E-B5D0-4C6B-AE8E-7CCED4F69F55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplianceX.Server.Client.Codec", "ApplianceX.Server.Client.Codec\ApplianceX.Server.Client.Codec.csproj", "{E8F2346B-7AF8-4A6D-B800-F96E1531ACC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{5853A383-3B78-43DD-AD72-A177FDE3A602}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5853A383-3B78-43DD-AD72-A177FDE3A602}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5853A383-3B78-43DD-AD72-A177FDE3A602}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03D6116E-B5D0-4C6B-AE8E-7CCED4F69F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03D6116E-B5D0-4C6B-AE8E-7CCED4F69F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03D6116E-B5D0-4C6B-AE8E-7CCED4F69F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03D6116E-B5D0-4C6B-AE8E-7CCED4F69F55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8F2346B-7AF8-4A6D-B800-F96E1531ACC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8F2346B-7AF8-4A6D-B800-F96E1531ACC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8F2346B-7AF8-4A6D-B800-F96E1531ACC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8F2346B-7AF8-4A6D-B800-F96E1531ACC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
