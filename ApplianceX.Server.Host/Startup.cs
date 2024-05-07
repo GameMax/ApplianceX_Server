@@ -39,9 +39,9 @@ public class Startup
                 Configuration.GetConnectionString("PostgreSqlConnection"),
                 b => b.MigrationsAssembly(typeOfContent.Assembly.GetName().Name)
             )
-        ); 
+        );
         
-        
+        services.AddScoped<IDatabaseFacade, DatabaseFacade>();
 
         ConfigureSwagger(services);
     }
