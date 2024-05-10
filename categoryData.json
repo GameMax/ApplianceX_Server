@@ -1,0 +1,228 @@
+{
+  "data": [
+    {
+      "categoryId": "80125",
+      "category_name": "Холодильники"
+    },
+    {
+      "categoryId": "80124",
+      "category_name": "Пральні машини"
+    },
+    {
+      "categoryId": "80133",
+      "category_name": "Кондиціонери"
+    },
+    {
+      "categoryId": "4674675",
+      "category_name": "Комплекти вбудованої техніки"
+    },
+    {
+      "categoryId": "4631242",
+      "category_name": "Акумуляторні пилососи"
+    },
+    {
+      "categoryId": "81089",
+      "category_name": "Мультипічки і аерогрилі"
+    },
+    {
+      "categoryId": "80153",
+      "category_name": "Соковижималки"
+    },
+    {
+      "categoryId": "80161",
+      "category_name": "Прасувальні системи"
+    },
+    {
+      "categoryId": "80203",
+      "category_name": "Морозильні камери"
+    },
+    {
+      "categoryId": "80123",
+      "category_name": "Посудомийні машини"
+    },
+    {
+      "categoryId": "80122",
+      "category_name": "Кухонні плити"
+    },
+    {
+      "categoryId": "80222",
+      "category_name": "Сушильні машини"
+    },
+    {
+      "categoryId": "80177",
+      "category_name": "Аксесуари до ВПТ"
+    },
+    {
+      "categoryId": "4671251",
+      "category_name": "Встановлення великої побутової техніки"
+    },
+    {
+      "categoryId": "4660034",
+      "category_name": "Сервісне обслуговування техніки"
+    },
+    {
+      "categoryId": "80158",
+      "category_name": "Пилососи"
+    },
+    {
+      "categoryId": "237815",
+      "category_name": "Роботи-пилососи"
+    },
+    {
+      "categoryId": "4631249",
+      "category_name": "Пилососи для сухого прибирання"
+    },
+    {
+      "categoryId": "80151",
+      "category_name": "Пароочисники"
+    },
+    {
+      "categoryId": "4629564",
+      "category_name": "Швейна техніка та аксесуари"
+    },
+    {
+      "categoryId": "3495687",
+      "category_name": "Машинки для стриження ковтунців"
+    },
+    {
+      "categoryId": "80141",
+      "category_name": "Вбудовувані духові шафи"
+    },
+    {
+      "categoryId": "80137",
+      "category_name": "Вбудовувані варильні поверхні"
+    },
+    {
+      "categoryId": "80140",
+      "category_name": "Кухонні витяжки"
+    },
+    {
+      "categoryId": "80162",
+      "category_name": "Вбудовувані печі НВЧ"
+    },
+    {
+      "categoryId": "80134",
+      "category_name": "Подрібнювачі харчових відходів"
+    },
+    {
+      "categoryId": "80185",
+      "category_name": "Аксесуари до ВПТ"
+    },
+    {
+      "categoryId": "81235",
+      "category_name": "Грилі та електрошашличниці"
+    },
+    {
+      "categoryId": "80155",
+      "category_name": "Блендери"
+    },
+    {
+      "categoryId": "80163",
+      "category_name": "Кухонні комбайни"
+    },
+    {
+      "categoryId": "112986",
+      "category_name": "Мультиварки"
+    },
+    {
+      "categoryId": "80176",
+      "category_name": "М'ясорубки"
+    },
+    {
+      "categoryId": "80160",
+      "category_name": "Електрочайники"
+    },
+    {
+      "categoryId": "81667",
+      "category_name": "Настільні плити"
+    },
+    {
+      "categoryId": "4674316",
+      "category_name": "Світ кави"
+    },
+    {
+      "categoryId": "80148",
+      "category_name": "Кухонні ваги"
+    },
+    {
+      "categoryId": "4625487",
+      "category_name": "Побутові вакуумні пакувальники"
+    },
+    {
+      "categoryId": "81225",
+      "category_name": "Епілятори"
+    },
+    {
+      "categoryId": "252133",
+      "category_name": "Фотоепілятори"
+    },
+    {
+      "categoryId": "437994",
+      "category_name": "Зубні щітки, іригатори та насадки"
+    },
+    {
+      "categoryId": "81227",
+      "category_name": "Фени"
+    },
+    {
+      "categoryId": "4660433",
+      "category_name": "Тримери"
+    },
+    {
+      "categoryId": "81231",
+      "category_name": "Прилади для укладання волосся"
+    },
+    {
+      "categoryId": "81229",
+      "category_name": "Машинки для стрижки"
+    },
+    {
+      "categoryId": "81226",
+      "category_name": "Електробритви"
+    },
+    {
+      "categoryId": "81232",
+      "category_name": "Ваги підлогові"
+    },
+    {
+      "categoryId": "81233",
+      "category_name": "Масажери"
+    },
+    {
+      "categoryId": "80186",
+      "category_name": "Вентилятори"
+    },
+    {
+      "categoryId": "82795",
+      "category_name": "Водонагрівачі"
+    },
+    {
+      "categoryId": "80128",
+      "category_name": "Очисники повітря"
+    },
+    {
+      "categoryId": "80130",
+      "category_name": "Зволожувачі повітря"
+    },
+    {
+      "categoryId": "388104",
+      "category_name": "Осушувачі повітря"
+    },
+    {
+      "categoryId": "80192",
+      "category_name": "Обігрівачі"
+    },
+    {
+      "categoryId": "150072",
+      "category_name": "Аксесуари до кліматичної техніки"
+    },
+    {
+      "categoryId": "4648950",
+      "category_name": "Котли опалення"
+    },
+    {
+      "categoryId": "4669195",
+      "category_name": "Постільна білизна з підігріванням"
+    }
+  ]
+}
