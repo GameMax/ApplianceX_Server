@@ -17,13 +17,14 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\ApplianceX.Server.Api.Service\ApplianceX.Server.Api.Service.csproj" />
       <ProjectReference Include="..\ApplianceX.Server.Client.Codec\ApplianceX.Server.Client.Codec.csproj" />
       <ProjectReference Include="..\ApplianceX.Server.Client\ApplianceX.Server.Client.csproj" />
       <ProjectReference Include="..\ApplianceX.Server.Database\ApplianceX.Server.Database.csproj" />
+      <ProjectReference Include="..\ApplianceX.Server.ExternalApi\ApplianceX.Server.ExternalApi.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\Admin\" />
       <Folder Include="Migrations\" />
     </ItemGroup>
 
