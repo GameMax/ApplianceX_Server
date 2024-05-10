@@ -1,8 +1,8 @@
 using System.Text.Json.Serialization;
 
-namespace ApplianceX.Server.ExternalApi.Fridge;
+namespace ApplianceX.Server.ExternalApi.Product;
 
-public class FridgeCategory
+public class ProductCategory
 {
     public string? Title { get; set; }  
 
