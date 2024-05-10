@@ -11,16 +11,16 @@ public class SellerRepository : AbstractRepository<SellerModel>, ISellerReposito
     }
 
     
-    public async Task<SellerModel> Create(string name)
-    {
-        var model = SellerModel.CreateModel(name);
-
-        var result = await CreateModelAsync(model);
-        if (result == null)
-        {
-            throw new Exception("Seller model is not created");
-        }
-
-        return result;
-    }
+    // public async Task<SellerModel> Create(string name)
+    // {
+    //     var model = SellerModel.CreateModel(name);
+    //
+    //     var result = await CreateModelAsync(model);
+    //     if (result == null)
+    //     {
+    //         throw new Exception("Seller model is not created");
+    //     }
+    //
+    //     return result;
+    // }
 }

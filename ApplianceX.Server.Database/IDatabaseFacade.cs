@@ -1,10 +1,9 @@
-﻿using ApplianceX.Server.Database.Seller;
-using ApplianceX.Server.Database.Seller.Statistic;
+﻿using ApplianceX.Server.Database.Product.Statistic;
+using ApplianceX.Server.Database.Seller;
 
 namespace ApplianceX.Server.Database;
 
 public interface IDatabaseFacade
 {
     ISellerRepository SellerRepository { get; }
-    ISellerStatisticRepository SellerStatisticRepository { get; }
 }
