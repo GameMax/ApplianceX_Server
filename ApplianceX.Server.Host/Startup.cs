@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using ApplianceX.Server.Api.Service;
 using ApplianceX.Server.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -40,6 +39,8 @@ public class Startup
                 b => b.MigrationsAssembly(typeOfContent.Assembly.GetName().Name)
             )
         );
+        
+        services.AddHttpClient<IBaseParser, BaseParser>();
         
         services.AddScoped<IDatabaseFacade, DatabaseFacade>();
 
