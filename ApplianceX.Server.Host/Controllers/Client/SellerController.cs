@@ -17,9 +17,11 @@ public class SellerController : AbstractClientController<SellerController>
     [HttpPost]
     public async Task<IActionResult> CreateSeller([FromBody] CreateSeller request)
     {
+        return SendOk();
+        /*
         var model = await Db.SellerRepository.Create(request.Name);
         
         return SendOk(SellerCodec.EncodeSeller(model));
-
+        */
     }
 }
