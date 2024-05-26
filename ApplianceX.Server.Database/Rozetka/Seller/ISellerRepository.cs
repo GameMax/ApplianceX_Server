@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace ApplianceX.Server.Database.Seller;
+﻿namespace ApplianceX.Server.Database.Rozetka.Seller;
 
 public interface ISellerRepository
 {

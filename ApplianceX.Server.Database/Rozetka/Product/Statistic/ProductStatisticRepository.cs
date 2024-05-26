@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace ApplianceX.Server.Database.Product.Statistic;
+namespace ApplianceX.Server.Database.Rozetka.Product.Statistic;
 
 public class ProductStatisticRepository : AbstractRepository<ProductStatisticModel>, IProductStatisticRepository
 {

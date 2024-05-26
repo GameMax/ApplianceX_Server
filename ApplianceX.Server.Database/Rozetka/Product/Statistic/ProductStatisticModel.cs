@@ -1,18 +1,18 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ApplianceX.Server.Database.Seller.Statistic;
+namespace ApplianceX.Server.Database.Rozetka.Product.Statistic;
 
-public class SellerStatisticModel : AbstractModel
+public class ProductStatisticModel : AbstractModel
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
 
-    public int SellerId { get; set; }
+    public int ProductId { get; set; }
     
-    [ForeignKey("SellerId")]
-    public SellerModel SellerModel { get; set; }
+    [ForeignKey("ProductId")]
+    public ProductModel ProductModel { get; set; }
 
     public int Service { get; set; }
 
@@ -21,11 +21,11 @@ public class SellerStatisticModel : AbstractModel
     public int Relevance { get; set; }
 
 
-    public static SellerStatisticModel CreateModel(int sellerId, int service, int delivery, int relevance)
+    public static ProductStatisticModel CreateModel(int productId, int service, int delivery, int relevance)
     {
-        return new SellerStatisticModel()
+        return new ProductStatisticModel
         {
-            SellerId = sellerId,
+            ProductId = productId,
             Service = service,
             Delivery = delivery,
             Relevance = relevance
@@ -33,9 +33,9 @@ public class SellerStatisticModel : AbstractModel
     }
 
 
-    public static SellerStatisticModel CreateEmpty()
+    public static ProductStatisticModel CreateEmpty()
     {
-        return new SellerStatisticModel()
+        return new ProductStatisticModel
         {
             Service = 0,
             Delivery = 0,

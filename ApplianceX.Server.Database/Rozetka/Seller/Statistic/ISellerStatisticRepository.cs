@@ -1,4 +1,4 @@
-﻿namespace ApplianceX.Server.Database.Seller.Statistic;
+﻿namespace ApplianceX.Server.Database.Rozetka.Seller.Statistic;
 
 public interface ISellerStatisticRepository
 {

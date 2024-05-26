@@ -1,8 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 
-namespace ApplianceX.Server.Database.Seller;
+namespace ApplianceX.Server.Database.Rozetka.Seller;
 
 public class SellerRepository : AbstractRepository<SellerModel>, ISellerRepository
 {

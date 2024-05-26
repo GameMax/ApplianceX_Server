@@ -13,7 +13,7 @@ public class Product
     [JsonPropertyName("old_price")]
     public int? OldPrice { get; set; }
 
-    public string? Href { get; set; } // да. Можешь до 12:00 спать потом посмотришь   иди спать  потом скачаешь ок и внутри рар там оставить текст или тг шо хоч  сек
+    public string? Href { get; set; }
     
     [JsonPropertyName("status")]
     public string? Status { get; set; }

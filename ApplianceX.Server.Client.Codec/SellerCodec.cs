@@ -1,6 +1,5 @@
 ﻿using ApplianceX.Server.Client.Payload.Seller;
-using ApplianceX.Server.Database.Seller;
-using ApplianceX.Server.Database.Seller.Statistic;
+using ApplianceX.Server.Database.Rozetka.Seller;
 
 namespace ApplianceX.Server.Client.Codec;
 

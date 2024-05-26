@@ -1,5 +1,4 @@
-﻿using ApplianceX.Server.Database.Product.Statistic;
-using ApplianceX.Server.Database.Seller;
+﻿using ApplianceX.Server.Database.Rozetka.Seller;
 
 namespace ApplianceX.Server.Database;
 
