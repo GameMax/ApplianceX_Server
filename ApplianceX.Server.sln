@@ -12,6 +12,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplianceX.Server.Api.Servi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplianceX.Server.ExternalApi", "ApplianceX.Server.ExternalApi\ApplianceX.Server.ExternalApi.csproj", "{D815B3F7-8CCA-4419-849B-F4009339B257}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplianceX.Server.Worker", "ApplianceX.Server.Worker\ApplianceX.Server.Worker.csproj", "{0381B693-B08D-490B-B0A1-2FA19392D1D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplianceX.Server.UseCase", "ApplianceX.Server.UseCase\ApplianceX.Server.UseCase.csproj", "{15905076-E00C-4661-837E-9CE09B8DEA0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplianceX.Server.Parsers", "ApplianceX.Server.Parsers\ApplianceX.Server.Parsers.csproj", "{ABA0859F-A4CA-4BA1-8609-E624BFD3A5D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +48,17 @@ Global
 		{D815B3F7-8CCA-4419-849B-F4009339B257}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D815B3F7-8CCA-4419-849B-F4009339B257}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D815B3F7-8CCA-4419-849B-F4009339B257}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0381B693-B08D-490B-B0A1-2FA19392D1D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0381B693-B08D-490B-B0A1-2FA19392D1D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0381B693-B08D-490B-B0A1-2FA19392D1D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0381B693-B08D-490B-B0A1-2FA19392D1D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15905076-E00C-4661-837E-9CE09B8DEA0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15905076-E00C-4661-837E-9CE09B8DEA0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15905076-E00C-4661-837E-9CE09B8DEA0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15905076-E00C-4661-837E-9CE09B8DEA0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABA0859F-A4CA-4BA1-8609-E624BFD3A5D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABA0859F-A4CA-4BA1-8609-E624BFD3A5D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABA0859F-A4CA-4BA1-8609-E624BFD3A5D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABA0859F-A4CA-4BA1-8609-E624BFD3A5D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
