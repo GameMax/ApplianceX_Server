@@ -24,8 +24,19 @@ IHost host = Host.CreateDefaultBuilder(args)
             ));
 
             services.AddHttpClient<IBaseParser, BaseParser>();
+            
+            // services.AddSingleton<IGateioParser, GateioParser>();
+            //
+            //
+            // services.AddHostedService<GateCurrencyDetailService>();
+    
 
-
+            // services.AddSingleton<IUseCaseContainer>(
+            //     sp => Factory.Create(
+            //         sp.GetRequiredService<ILoggerFactory>(),
+            //         sp.GetRequiredService<IGateioParser>()
+            //     )
+            // );
         })
     .Build();
 

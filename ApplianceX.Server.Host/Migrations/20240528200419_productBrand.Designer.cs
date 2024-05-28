@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ApplianceX.Server.Host.Migrations
 {
     [DbContext(typeof(PostgreSqlContext))]
-    [Migration("20240526184434_productBrand")]
+    [Migration("20240528200419_productBrand")]
     partial class productBrand
     {
         /// <inheritdoc />
@@ -50,8 +50,8 @@ namespace ApplianceX.Server.Host.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("CategoryUid")
-                        .HasColumnType("integer");
+                    b.Property<string>("CategoryUid")
+                        .HasColumnType("text");
 
                     b.Property<string>("Cover")
                         .HasColumnType("text");

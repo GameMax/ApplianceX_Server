@@ -27,7 +27,7 @@ namespace ApplianceX.Server.Host.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Title = table.Column<string>(type: "text", nullable: false),
                     Cover = table.Column<string>(type: "text", nullable: true),
-                    CategoryUid = table.Column<int>(type: "integer", nullable: true),
+                    CategoryUid = table.Column<string>(type: "text", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },

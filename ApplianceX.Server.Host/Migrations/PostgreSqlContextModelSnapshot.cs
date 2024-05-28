@@ -47,8 +47,8 @@ namespace ApplianceX.Server.Host.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("CategoryUid")
-                        .HasColumnType("integer");
+                    b.Property<string>("CategoryUid")
+                        .HasColumnType("text");
 
                     b.Property<string>("Cover")
                         .HasColumnType("text");

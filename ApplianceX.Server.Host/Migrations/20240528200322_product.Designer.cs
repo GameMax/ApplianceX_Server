@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ApplianceX.Server.Host.Migrations
 {
     [DbContext(typeof(PostgreSqlContext))]
-    [Migration("20240526184600_productStatistic")]
-    partial class productStatistic
+    [Migration("20240528200322_product")]
+    partial class product
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,52 +25,6 @@ namespace ApplianceX.Server.Host.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("ApplianceX.Server.Database.Rozetka.Brand.BrandModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProductBrand");
-                });
-
-            modelBuilder.Entity("ApplianceX.Server.Database.Rozetka.Category.CategoryModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("CategoryUid")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Cover")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProductCategory");
-                });
-
             modelBuilder.Entity("ApplianceX.Server.Database.Rozetka.Product.ProductModel", b =>
                 {
                     b.Property<int>("Id")
@@ -78,12 +32,6 @@ namespace ApplianceX.Server.Host.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("BrandId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("integer");
 
                     b.Property<int?>("CommentsAmount")
                         .HasColumnType("integer");
@@ -132,41 +80,9 @@ namespace ApplianceX.Server.Host.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BrandId");
-
-                    b.HasIndex("CategoryId");
-
                     b.HasIndex("SellerId");
 
                     b.ToTable("Product");
-                });
-
-            modelBuilder.Entity("ApplianceX.Server.Database.Rozetka.Product.Statistic.ProductStatisticModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Delivery")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Relevance")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Service")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId")
-                        .IsUnique();
-
-                    b.ToTable("ProductStatistic");
                 });
 
             modelBuilder.Entity("ApplianceX.Server.Database.Rozetka.Seller.SellerModel", b =>
@@ -203,46 +119,13 @@ namespace ApplianceX.Server.Host.Migrations
 
             modelBuilder.Entity("ApplianceX.Server.Database.Rozetka.Product.ProductModel", b =>
                 {
-                    b.HasOne("ApplianceX.Server.Database.Rozetka.Brand.BrandModel", "Brand")
-                        .WithMany()
-                        .HasForeignKey("BrandId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ApplianceX.Server.Database.Rozetka.Category.CategoryModel", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("ApplianceX.Server.Database.Rozetka.Seller.SellerModel", "SellerModel")
                         .WithMany()
                         .HasForeignKey("SellerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Brand");
-
-                    b.Navigation("Category");
-
                     b.Navigation("SellerModel");
-                });
-
-            modelBuilder.Entity("ApplianceX.Server.Database.Rozetka.Product.Statistic.ProductStatisticModel", b =>
-                {
-                    b.HasOne("ApplianceX.Server.Database.Rozetka.Product.ProductModel", "ProductModel")
-                        .WithOne("Statistic")
-                        .HasForeignKey("ApplianceX.Server.Database.Rozetka.Product.Statistic.ProductStatisticModel", "ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ProductModel");
-                });
-
-            modelBuilder.Entity("ApplianceX.Server.Database.Rozetka.Product.ProductModel", b =>
-                {
-                    b.Navigation("Statistic")
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ApplianceX.Server.Host.Migrations
 {
     [DbContext(typeof(PostgreSqlContext))]
-    [Migration("20240526183535_product")]
-    partial class product
+    [Migration("20240528200359_productCategory")]
+    partial class productCategory
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,6 +25,35 @@ namespace ApplianceX.Server.Host.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("ApplianceX.Server.Database.Rozetka.Category.CategoryModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CategoryUid")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Cover")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductCategory");
+                });
+
             modelBuilder.Entity("ApplianceX.Server.Database.Rozetka.Product.ProductModel", b =>
                 {
                     b.Property<int>("Id")
@@ -32,6 +61,9 @@ namespace ApplianceX.Server.Host.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("integer");
 
                     b.Property<int?>("CommentsAmount")
                         .HasColumnType("integer");
@@ -80,6 +112,8 @@ namespace ApplianceX.Server.Host.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.HasIndex("SellerId");
 
                     b.ToTable("Product");
@@ -119,11 +153,19 @@ namespace ApplianceX.Server.Host.Migrations
 
             modelBuilder.Entity("ApplianceX.Server.Database.Rozetka.Product.ProductModel", b =>
                 {
+                    b.HasOne("ApplianceX.Server.Database.Rozetka.Category.CategoryModel", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ApplianceX.Server.Database.Rozetka.Seller.SellerModel", "SellerModel")
                         .WithMany()
                         .HasForeignKey("SellerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Category");
 
                     b.Navigation("SellerModel");
                 });
