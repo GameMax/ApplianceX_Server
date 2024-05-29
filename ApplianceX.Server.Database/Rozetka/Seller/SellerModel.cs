@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using ApplianceX.Server.ExternalApi.Product;
 
 namespace ApplianceX.Server.Database.Rozetka.Seller;
 
@@ -21,6 +22,19 @@ public class SellerModel : AbstractModel
     public DateTime CreatedAt { get; set; }
     
     public DateTime UpdatedAt { get; set; }
+
+
+    public static SellerModel CreateModel(ProductSeller apiModel, DateTime createdAt)
+    {
+        return new SellerModel
+        {
+            Seller = apiModel.Title!,
+            CountVotes = apiModel.CountVotes,
+            Rank = apiModel.Rank,
+            Logo = apiModel.Logo,
+            CreatedAt = createdAt
+        };
+    }
 }
 
 
