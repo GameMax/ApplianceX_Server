@@ -14,10 +14,31 @@ public class CategoryModel : AbstractModel
     
     public string? Cover { get; set; }
     
-    public int? CategoryUid { get; set; }
+    public string? CategoryUid { get; set; }
     
     public DateTime CreatedAt { get; set; }
     
     public DateTime UpdatedAt { get; set; }
+
+
+    public static CategoryModel CreateModel(string title, string? cover, string? categoryUid, DateTime createdAt)
+    {
+        return new CategoryModel
+        {
+            Title = title,
+            Cover = cover,
+            CategoryUid = categoryUid,
+            CreatedAt = createdAt
+        };
+    }
+
+
+    public void UpdateModel(string title, string? cover, string? categoryUid, DateTime updatedAt)
+    {
+        Title = title;
+        Cover = cover;
+        CategoryUid = categoryUid;
+        UpdatedAt = updatedAt;
+    }
 }
 
