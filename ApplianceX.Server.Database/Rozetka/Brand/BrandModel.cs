@@ -10,4 +10,19 @@ public class BrandModel : AbstractModel
     public int Id { get; set; }
 
     public string Title { get; set; }
+
+
+    public static BrandModel CreateModel(string title)
+    {
+        return new BrandModel
+        {
+            Title = title
+        };
+    }
+
+
+    public void UpdateModel(string title)
+    {
+        Title = title;
+    }
 }
