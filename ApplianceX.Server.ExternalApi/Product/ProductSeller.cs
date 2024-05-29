@@ -4,7 +4,7 @@ namespace ApplianceX.Server.ExternalApi.Product;
 
 public class ProductSeller
 {
-    public string? Id { get; set; }
+    public int? Id { get; set; }
     
     public string? Title { get; set; }
 
