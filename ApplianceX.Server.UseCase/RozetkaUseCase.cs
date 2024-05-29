@@ -49,8 +49,11 @@ public class RozetkaUseCase : IRozetkaUseCase
         {
             var collectionIds = await _rozetkaParser.GetByCategoryProductIds(categoryUid, page, cancellationToken);
 
+            _logger.LogInformation("\n\t --- Parsing process for category ID: {CategoryId}. Total Pages: {TotalPages} ---\n", categoryUid, collectionIds.Data.TotalPages);
+
             for (int i = 1; i <= collectionIds.Data.TotalPages; i++)
             {
+                _logger.LogInformation("\n\t --- Page: {Page}.of {TotalPages} ---\n", i, collectionIds.Data.TotalPages);
                 collectionIds = await _rozetkaParser.GetByCategoryProductIds(categoryUid, i.ToString(), cancellationToken);
                 await Task.Delay(2_000, cancellationToken);
 
@@ -99,6 +102,8 @@ public class RozetkaUseCase : IRozetkaUseCase
                         );
                         preparedNewModels.Add(newModel);
 
+                        // _logger.LogInformation("Added new model: {Name}", newModel.Title);
+
                         continue;
                     }
 
@@ -106,14 +111,12 @@ public class RozetkaUseCase : IRozetkaUseCase
                     {
                         searchedModel.UpdateModel(apiProduct, DateTime.UtcNow);
 
-                        _logger.LogInformation($"Model {searchedModel.Title} is not same");
+                        _logger.LogInformation("Model {Title} has been updated! Because it is not same", searchedModel.Title);
 
                         preparedUpdateModels.Add(searchedModel);
                     }
                 }
             }
-
-
         }
 
         if (preparedNewModels.Any())
