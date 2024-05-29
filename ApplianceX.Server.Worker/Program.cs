@@ -1,10 +1,14 @@
 using System;
 using ApplianceX.Server.Api.Service;
 using ApplianceX.Server.Database;
+using ApplianceX.Server.Parsers;
+using ApplianceX.Server.UseCase;
+using ApplianceX.Server.Worker.Rozetka;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting; 
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureAppConfiguration(
@@ -25,18 +29,18 @@ IHost host = Host.CreateDefaultBuilder(args)
 
             services.AddHttpClient<IBaseParser, BaseParser>();
             
-            // services.AddSingleton<IGateioParser, GateioParser>();
-            //
-            //
-            // services.AddHostedService<GateCurrencyDetailService>();
+            services.AddSingleton<IRozetkaParser, RozetkaParser>();
+            
+            
+            services.AddHostedService<RozetkaProductService>();
     
 
-            // services.AddSingleton<IUseCaseContainer>(
-            //     sp => Factory.Create(
-            //         sp.GetRequiredService<ILoggerFactory>(),
-            //         sp.GetRequiredService<IGateioParser>()
-            //     )
-            // );
+            services.AddSingleton<IUseCaseContainer>(
+                sp => Factory.Create(
+                    sp.GetRequiredService<ILoggerFactory>(),
+                    sp.GetRequiredService<IRozetkaParser>()
+                )
+            );
         })
     .Build();
 
