@@ -12,7 +12,7 @@ public class ProductRepository : AbstractRepository<ProductModel>, IProductRepos
     public ProductRepository(PostgreSqlContext context, ILoggerFactory loggerFactory) : base(context, loggerFactory)
     {
     }
-    
+
     public async Task<bool> CreateBulk(ImmutableArray<ProductModel> collection)
     {
         var result = await CreateBulkModelsAsync(collection);
@@ -20,11 +20,11 @@ public class ProductRepository : AbstractRepository<ProductModel>, IProductRepos
         {
             throw new Exception("Products are not created. Create Bulk error");
         }
-        
+
         return true;
     }
-    
-    
+
+
     public async Task<bool> UpdateBulk(ImmutableArray<ProductModel> collection)
     {
         var result = await UpdateBulkModelsAsync(collection);
@@ -32,15 +32,28 @@ public class ProductRepository : AbstractRepository<ProductModel>, IProductRepos
         {
             throw new Exception("Products are not updated. Update Bulk error");
         }
-        
+
         return true;
     }
-        
-    
+
+
     public async Task<ImmutableArray<ProductModel>> ListAllProducts(ImmutableArray<string> titles)
     {
         var collection = await DbModel.Where(x => titles.Contains(x.Title!)).ToListAsync();
 
         return collection.ToImmutableArray();
+    }
+
+
+    public async Task<ImmutableArray<ProductModel>> ListAll()
+    {
+        var collection = await DbModel.
+            OrderBy(x => x.CreatedAt).
+            Include(x => x.Category).
+            Include(x => x.Brand).
+            Include(x=> x.SellerModel).
+            ToListAsync();
+        
+        return [..collection];
     }
 }

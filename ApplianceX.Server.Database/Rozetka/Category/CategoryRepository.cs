@@ -36,6 +36,13 @@ public class CategoryRepository : AbstractRepository<CategoryModel>, ICategoryRe
     }
 
 
+    public async Task<ImmutableArray<CategoryModel>> ListAll()
+    {
+        var collection = await DbModel.ToListAsync();
+        return [..collection];
+    }
+
+
 
     public async Task<CategoryModel> FindOne(string title)
     {

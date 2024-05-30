@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Immutable;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -14,13 +16,13 @@ public class BrandRepository : AbstractRepository<BrandModel>, IBrandRepository
     public async Task<BrandModel> CreateModel(string title)
     {
         var model = BrandModel.CreateModel(title);
-        
+
         var result = await CreateModelAsync(model);
         if (result == null)
         {
             throw new Exception("Brand model is not created");
         }
-        
+
         return result;
     }
 
@@ -29,5 +31,12 @@ public class BrandRepository : AbstractRepository<BrandModel>, IBrandRepository
     {
         var model = await DbModel.FirstOrDefaultAsync(x => x.Title == title);
         return model;
+    }
+
+
+    public async Task<ImmutableArray<BrandModel>> ListAll()
+    {
+        var collection = await DbModel.OrderBy(x => x.Id).ToListAsync();
+        return [..collection];
     }
 }

@@ -10,14 +10,35 @@ namespace ApplianceX.Server.Host.Controllers.Client;
 public class ParserController : AbstractClientController<ParserController>
 {
     private readonly IBaseParser _parser;
-    
+
     public ParserController(PostgreSqlContext context, ILoggerFactory loggerFactory, IBaseParser parser) : base(context, loggerFactory)
     {
         _parser = parser;
     }
 
-    
-    
+
+    [HttpGet]
+    public async Task<IActionResult> GetAllProducts()
+    {
+        var collection = await Db.ProductRepository.ListAll();
+        return SendOk(collection);
+    }
+
+
+    [HttpGet]
+    public async Task<IActionResult> GetAllCategories()
+    {
+        var collection = await Db.CategoryRepository.ListAll();
+        return SendOk(collection);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAllBrands()
+    {
+        var collection = await Db.BrandRepository.ListAll();
+        return SendOk(collection);
+    }
+
     [HttpGet]
     public async Task<IActionResult> GetItemIdsByCategoryId(string categoryId = "80125", string page = "1")
     {
@@ -26,8 +47,8 @@ public class ParserController : AbstractClientController<ParserController>
 
         return SendOk(data);
     }
-    
-    
+
+
     [HttpGet]
     public async Task<IActionResult> GetFullItemInfoById(string id)
     {

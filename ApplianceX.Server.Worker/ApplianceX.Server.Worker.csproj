@@ -14,8 +14,4 @@
       <ProjectReference Include="..\ApplianceX.Server.Parsers\ApplianceX.Server.Parsers.csproj" />
       <ProjectReference Include="..\ApplianceX.Server.UseCase\ApplianceX.Server.UseCase.csproj" />
     </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="Properties\launchSettings.json" />
-    </ItemGroup>
 </Project>

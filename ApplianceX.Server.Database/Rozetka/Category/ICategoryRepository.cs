@@ -10,5 +10,7 @@ public interface ICategoryRepository
 
    Task<ImmutableArray<string>> ListAllCategoryUIds();
 
+   Task<ImmutableArray<CategoryModel>> ListAll();
+
    Task<CategoryModel?> FindOne(string title);
 }

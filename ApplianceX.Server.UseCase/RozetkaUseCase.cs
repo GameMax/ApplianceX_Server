@@ -53,7 +53,7 @@ public class RozetkaUseCase : IRozetkaUseCase
 
             for (int i = 1; i <= collectionIds.Data.TotalPages; i++)
             {
-                _logger.LogInformation("\n\t --- Page: {Page}.of {TotalPages} ---\n", i, collectionIds.Data.TotalPages);
+                _logger.LogInformation("\n\t --- Page: {Page}.of {TotalPages} --- Category: {Category}\n", i, collectionIds.Data.TotalPages, categoryUid);
                 collectionIds = await _rozetkaParser.GetByCategoryProductIds(categoryUid, i.ToString(), cancellationToken);
                 await Task.Delay(2_000, cancellationToken);
 
@@ -117,19 +117,23 @@ public class RozetkaUseCase : IRozetkaUseCase
                     }
                 }
             }
+
+            if (preparedNewModels.Any())
+            {
+                await productRepository.CreateBulk(preparedNewModels.ToImmutableArray());
+                _logger.LogInformation("\n\t Bulk Create products success! Count: {Count}", preparedNewModels.Count);
+                preparedNewModels.Clear();
+            }
+
+            if (preparedUpdateModels.Any())
+            {
+                await productRepository.UpdateBulk(preparedUpdateModels.ToImmutableArray());
+                _logger.LogInformation("\n\t Bulk Update products success! Count: {Count}", preparedUpdateModels.Count);
+                preparedUpdateModels.Clear();
+            }
         }
 
-        if (preparedNewModels.Any())
-        {
-            await productRepository.CreateBulk(preparedNewModels.ToImmutableArray());
-            _logger.LogInformation("\n\t Bulk Create products success! Count: {Count}", preparedNewModels.Count);
-        }
 
-        if (preparedUpdateModels.Any())
-        {
-            await productRepository.UpdateBulk(preparedNewModels.ToImmutableArray());
-            _logger.LogInformation("\n\t Bulk Update products success! Count: {Count}", preparedUpdateModels.Count);
-        }
 
         return true;
     }
