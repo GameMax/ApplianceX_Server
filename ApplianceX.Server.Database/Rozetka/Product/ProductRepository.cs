@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Threading.Tasks;
@@ -55,5 +56,19 @@ public class ProductRepository : AbstractRepository<ProductModel>, IProductRepos
             ToListAsync();
         
         return [..collection];
+    }
+    
+    
+    public async Task<List<ProductModel>> ListPopular()
+    {
+       return await DbModel
+            .OrderByDescending(x => x.CommentsAmount)
+            .Skip(0)
+            .Take(15)
+            .Include(x => x.Category)
+            .Include(x => x.Brand)
+            .Include(x => x.SellerModel)
+            .AsSplitQuery()
+            .ToListAsync();
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 
@@ -12,5 +13,6 @@ public interface IProductRepository
     Task<ImmutableArray<ProductModel>> ListAllProducts(ImmutableArray<string> titles);
 
     Task<ImmutableArray<ProductModel>> ListAll();
-
+    
+    Task<List<ProductModel>> ListPopular();
 }
