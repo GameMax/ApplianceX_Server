@@ -11,6 +11,7 @@ using ApplianceX.Server.Database.Rozetka.Product.Statistic;
 using ApplianceX.Server.Database.Rozetka.Seller;
 using ApplianceX.Server.Database.Rozetka.Seller.Statistic;
 using ApplianceX.Server.Parsers;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace ApplianceX.Server.UseCase;
@@ -43,6 +44,10 @@ public class RozetkaUseCase : IRozetkaUseCase
         var preparedUpdateModels = new List<ProductModel>();
 
         var dbCategoryUIds = await categoryRepository.ListAllCategoryUIds();
+
+
+
+
 
         const string page = "1";
         foreach (var categoryUid in dbCategoryUIds)
