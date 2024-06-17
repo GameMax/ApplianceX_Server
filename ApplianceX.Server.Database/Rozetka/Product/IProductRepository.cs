@@ -15,4 +15,6 @@ public interface IProductRepository
     Task<ImmutableArray<ProductModel>> ListAll();
     
     Task<List<ProductModel>> ListPopular();
+    
+    Task<List<ProductModel>> ListProductByCategory(string category);
 }

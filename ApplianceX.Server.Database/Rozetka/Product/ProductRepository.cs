@@ -71,4 +71,18 @@ public class ProductRepository : AbstractRepository<ProductModel>, IProductRepos
             .AsSplitQuery()
             .ToListAsync();
     }
+    
+    
+    public async Task<List<ProductModel>> ListProductByCategory(string category)
+    {
+        return await DbModel
+            .Where(x => x.Category.Title.ToLower() == category.ToLower())
+            .Skip(0)
+            .Take(30)
+            .Include(x => x.Category)
+            .Include(x => x.Brand)
+            .Include(x => x.SellerModel)
+            .AsSplitQuery()
+            .ToListAsync();
+    }
 }

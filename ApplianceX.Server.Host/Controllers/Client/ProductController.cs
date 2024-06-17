@@ -19,4 +19,13 @@ public class ProductController : AbstractClientController<ProductController>
 
         return SendOk(collection);
     }
+
+
+    [HttpGet]
+    public async Task<IActionResult> GetProductsByCategory(string category)
+    {
+        var collection = await Db.ProductRepository.ListProductByCategory(category);
+
+        return SendOk(collection);
+    }
 }
