@@ -78,7 +78,20 @@ public class ProductRepository : AbstractRepository<ProductModel>, IProductRepos
         return await DbModel
             .Where(x => x.Category.Title.ToLower() == category.ToLower())
             .Skip(0)
-            .Take(30)
+            .Take(50)
+            .Include(x => x.Category)
+            .Include(x => x.Brand)
+            .Include(x => x.SellerModel)
+            .AsSplitQuery()
+            .ToListAsync();
+    }    
+    
+    public async Task<List<ProductModel>> ListProductByCategoryId(int categoryId)
+    {
+        return await DbModel
+            .Where(x => x.CategoryId == categoryId)
+            .Skip(0)
+            .Take(50)
             .Include(x => x.Category)
             .Include(x => x.Brand)
             .Include(x => x.SellerModel)

@@ -17,4 +17,6 @@ public interface IProductRepository
     Task<List<ProductModel>> ListPopular();
     
     Task<List<ProductModel>> ListProductByCategory(string category);
+    
+    Task<List<ProductModel>> ListProductByCategoryId(int categoryId);
 }

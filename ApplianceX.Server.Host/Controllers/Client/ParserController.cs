@@ -16,46 +16,23 @@ public class ParserController : AbstractClientController<ParserController>
         _parser = parser;
     }
 
-
-    [HttpGet]
-    public async Task<IActionResult> GetAllProducts()
-    {
-        var collection = await Db.ProductRepository.ListAll();
-        return SendOk(collection);
-    }
-
-
-    [HttpGet]
-    public async Task<IActionResult> GetAllCategories()
-    {
-        var collection = await Db.CategoryRepository.ListAll();
-        return SendOk(collection);
-    }
-
-    [HttpGet]
-    public async Task<IActionResult> GetAllBrands()
-    {
-        var collection = await Db.BrandRepository.ListAll();
-        return SendOk(collection);
-    }
-
-    [HttpGet]
-    public async Task<IActionResult> GetItemIdsByCategoryId(string categoryId = "80125", string page = "1")
-    {
-        var preparedLink = $"https://xl-catalog-api.rozetka.com.ua/v4/goods/get?front-type=xl&country=UA&lang=ua&page={page}&category_id={categoryId}&abt=1";
-        var data = await _parser.ParseGet<object>(preparedLink, new CancellationToken());
-
-        return SendOk(data);
-    }
-
-
-    [HttpGet]
-    public async Task<IActionResult> GetFullItemInfoById(string id)
-    {
-        // var preparedIdsString = string.Join(",", ids);
-        var preparedLink = $"https://xl-catalog-api.rozetka.com.ua/v4/goods/getDetails?country=UA&lang=ua&with_groups=1&with_docket=1&with_extra_info=1&goods_group_href=1&product_ids={id}";
-        var data = await _parser.ParseGet<object>(preparedLink, new CancellationToken());
-
-        return SendOk(data);
-    }
+    // [HttpGet]
+    // public async Task<IActionResult> GetItemIdsByCategoryId(string categoryId = "80125", string page = "1")
+    // {
+    //     var preparedLink = $"https://xl-catalog-api.rozetka.com.ua/v4/goods/get?front-type=xl&country=UA&lang=ua&page={page}&category_id={categoryId}&abt=1";
+    //     var data = await _parser.ParseGet<object>(preparedLink, new CancellationToken());
+    //
+    //     return SendOk(data);
+    // }
+    //
+    //
+    // [HttpGet]
+    // public async Task<IActionResult> GetFullItemInfoById(string id)
+    // {
+    //     // var preparedIdsString = string.Join(",", ids);
+    //     var preparedLink = $"https://xl-catalog-api.rozetka.com.ua/v4/goods/getDetails?country=UA&lang=ua&with_groups=1&with_docket=1&with_extra_info=1&goods_group_href=1&product_ids={id}";
+    //     var data = await _parser.ParseGet<object>(preparedLink, new CancellationToken());
+    //
+    //     return SendOk(data);
+    // }
 }
